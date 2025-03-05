@@ -1,42 +1,189 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+.main-content {
+  height: 100vh; /* Ocupamos toda la pantalla */
+  display: flex;
+  justify-content: center; /* Centramos en eje X */
+  align-items: center; /* Centramos en eje Y */
+}
+
+/* Logo */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 90px;
+  height: 90px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Contenedor del "rectángulo imaginario" */
+.rect {
+  height: 500px;
+  width: 850px;
+  display: flex;
+  justify-content: space-between; /* Espaciamos las partes izquierda y derecha */
+  align-items: center;
+  padding: 20px;  
+}
+h1 {
+  color: #EA6947;
+}
+
+/* Parte izquierda */
+.rect-izq {
+  width: 420px; /* 60% de 700px */
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 20px;
+}
+
+.soyjazmin {
+  display: block;
+  margin-bottom: 10px; /* Separa el texto */
+  font-weight: bold; /* Resalta "Soy Jazmín" */
+  font-size: 3.5rem; /* Ajusta tamaño */
+}
+
+.about-text {
+  color: black;
+  font-size: 1.2rem;
+}
+
+/* Contenedor CV y flecha */
+.cv, .proyectos_flecha {
+  display: flex;
+  align-items: center; /* Alineamos los elementos verticalmente */
+  gap: 5px; /* Espaciamos los elementos */
+}
+
+.icono-cv, .icono-flecha, .linea {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+}
+
+.icono-flecha {
+  position: relative;
+  top: 35px;
+  right: 22px;
+}
+.proyectos_flecha{
+  position: relative;
+  justify-content: center;
+  left: 15px; /*Para que se vea centrado visualmente*/
+}
+/* Parte derecha */
+.rect-der {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  color: #EA6947;
+  margin-top: 70px;
+}
+/* Contenedor de los iconos de redes sociales */
+.social-icons {
+  display: flex;
+  flex-direction: column; /* Iconos en columna */
+  align-items: center; /* Centrados en eje X */
+  position: absolute; /* Fijamos la posición */
+  right: 35px; /* Pegados a la derecha */
+  top: 50%; /* Centrados en el eje Y */
+  transform: translateY(-50%); /* Corrección para que queden bien centrados */
+  gap: 15px; /* Espacio entre iconos */
+}
+
+/* Estilos para los iconos */
+.social-icon {
+  width: 45px; /* Tamaño de los iconos */
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* Media queries para hacerlo más responsivo */
+@media (max-width: 950px) {
+  .rect {
+    flex-direction: column; /* Cambiamos a columna en pantallas pequeñas */
+    max-width: 90%;
+    justify-content: center; /* Centramos las partes en pantallas pequeñas */
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Para asegurarnos de que las secciones ocupen el 100% del ancho sin espacio extra */
+  .rect-izq,
+  .rect-der {
+    width: 100%; /* Ambas se ocuparán el 100% del ancho en pantallas pequeñas */
+    margin: 0; /* Eliminar cualquier margen adicional */
+  }
+
+  /* Reducir tamaños de texto */
+  .soyjazmin {
+    font-size: 2rem; /* Reducimos el tamaño en pantallas pequeñas */
+  }
+
+  .about-text {
+    font-size: 1rem; /* Reducimos el tamaño en pantallas pequeñas */
+  }
+
+  /* Aseguramos que el contenido de la parte derecha esté centrado en el eje X */
+  .rect-der {
+    margin-top: 20px; /* Reducimos el margen superior */
+    text-align: center; /* Centrado del texto en la parte derecha */
+    margin-left: 30px; /*Centrarlo visualmente*/
+  }
+
+  /* Aseguramos que la imagen de CV también esté centrada */
+  .cv {
+    justify-content: center;
+  }
+
+  /* Aseguramos que la flecha también quede centrada */
+  .proyectos_flecha {
+    justify-content: center;
+  }
+
+  /* Reducimos el tamaño del logo en pantallas pequeñas */
+  .logo {
+    width: 60px;  /* Ajustamos el tamaño */
+    height: 60px; /* Ajustamos el tamaño */
+  }
+
+  /* Cambiar la posición de los iconos de redes sociales en dispositivos pequeños */
+  .social-icons {
+    position: relative; /* Eliminamos la posición absoluta */
+    top: auto; /* Eliminamos el centrado vertical */
+    right: 15px; /* Eliminamos el alineamiento a la derecha */
+    margin-top: 20px; /* Añadimos un margen superior para separar los iconos del contenido superior */
+    justify-content: center; /* Centramos los iconos horizontalmente */
+  }
+
+  /* Estilos para los iconos */
+  .social-icon {
+    width: 40px; /* Reducimos el tamaño de los iconos en pantallas pequeñas */
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    margin: 5px; /* Añadimos un pequeño margen entre los iconos */
+  }
+
+  /* Efecto hover */
+  .social-icon:hover {
+    transform: scale(1.1);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

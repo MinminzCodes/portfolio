@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <main className="main-content">
+      {/* Logo en la esquina superior izquierda */}
+      <img src="/logo.png" alt="Logo de Jazmín" className="logo" />
 
-export default App
+      {/* Contenedor del rectángulo imaginario */}
+      <div className="rect">
+        {/* Parte izquierda */}
+        <div className="rect-izq">
+          <h1>Hey! <span className="soyjazmin">Soy Jazmín</span></h1>
+          <p className="about-text">
+          Diseñadora web y programadora. Me gusta crear interfaces que combinen estética y funcionalidad. Siempre persigo mis objetivos hasta lograrlos, ¿eres de los míos?</p>
+        </div>
+
+        {/* Parte derecha*/}
+        <div className="rect-der">
+          <div className="cv">
+            <img className="icono-cv" src="/cv.png" alt="Icono de CV" />
+            <p>¿Quieres saber más de mi?</p>
+          </div>
+          <div className="proyectos_flecha">
+            <img className="linea" src="/linea.png" alt="linea" />
+            <p>Mis proyectos :&#41;</p>
+            <img className="icono-flecha" src="/flecha.png" alt="flecha" />
+          </div>
+        </div>
+      </div>
+      {/* Iconos de redes en el lateral derecho */}
+      <div className="social-icons">
+        <a href="https://github.com/MinminzCodes" target="_blank" rel="noopener noreferrer">
+          <img className="social-icon" src="/github-icon.png" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/jazmin-matta/" target="_blank" rel="noopener noreferrer">
+          <img className="social-icon" src="/linkedin-icon.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </main>
+  );
+};
+
+export default App;
