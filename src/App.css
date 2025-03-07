@@ -5,10 +5,37 @@
 }
 
 .main-content {
+  position: relative;
   height: 100vh; /* Ocupamos toda la pantalla */
   display: flex;
   justify-content: center; /* Centramos en eje X */
   align-items: center; /* Centramos en eje Y */
+}
+
+.menu { /*Posicionamos el menu*/
+  position: absolute;
+  width: 360px;
+  display: flex;
+  justify-content: space-evenly;
+  top: 35px;
+  right: 40px;
+}
+
+.menu ul { /*Quitamos el estilo a los elementos del menú*/
+  list-style-type: none;
+  display: flex;
+  gap: 30px; /*Separación entre elementos*/
+}
+
+.menu ul li a { /*Personalizamos los anchor tag*/
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease; /* Añade transición suave */
+}
+
+.menu ul li a:hover { /*Al pasar el ratón se pone el texto de ese color*/
+  color: #EA6947;
 }
 
 /* Logo */
@@ -16,8 +43,8 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70  px;
 }
 
 /* Contenedor del "rectángulo imaginario" */
@@ -68,11 +95,25 @@ h1 {
   object-fit: contain;
 }
 
+.icono-cv{
+  cursor: pointer;
+}
+
 .icono-flecha {
   position: relative;
   top: 35px;
   right: 22px;
+  transition: transform 0.3s ease; /* Transición suave para el giro */
+  animation: rotateContinuous 0.75s linear infinite; /* Gira de forma continua */
+  animation-play-state: paused; /* Pausar la animación por defecto */
+  cursor: pointer;
 }
+
+/* Activa la animación cuando se hace hover */
+.icono-flecha:hover {
+  animation-play-state: running; /* Reanuda la animación */
+}
+
 .proyectos_flecha{
   position: relative;
   justify-content: center;
@@ -186,4 +227,15 @@ h1 {
   }
 }
 
-
+/*Animación para la flecha*/
+@keyframes rotateContinuous {
+  0% {
+    transform: rotate(0deg); /* Empieza desde 0 grados */
+  }
+  50% {
+    transform: rotate(20deg); /* Gira 20 grados */
+  }
+  100% {
+    transform: rotate(0deg); /* Vuelve a su posición original :) */
+  }
+}

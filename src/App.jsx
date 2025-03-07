@@ -4,6 +4,16 @@ import "./App.css";
 const App = () => {
   return (
     <main className="main-content">
+      {/* Menú en la esquina superior derecha */}
+      <div className="menu">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+
       {/* Logo en la esquina superior izquierda */}
       <img src="/logo.png" alt="Logo de Jazmín" className="logo" />
 
@@ -13,7 +23,8 @@ const App = () => {
         <div className="rect-izq">
           <h1>Hey! <span className="soyjazmin">Soy Jazmín</span></h1>
           <p className="about-text">
-          Diseñadora web y programadora. Me gusta crear interfaces que combinen estética y funcionalidad. Siempre persigo mis objetivos hasta lograrlos, ¿eres de los míos?</p>
+            Diseñadora web y programadora. Me gusta crear interfaces que combinen estética y funcionalidad. Siempre persigo mis objetivos hasta lograrlos, ¿eres de los míos?
+          </p>
         </div>
 
         {/* Parte derecha*/}
@@ -29,6 +40,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      
       {/* Iconos de redes en el lateral derecho */}
       <div className="social-icons">
         <a href="https://github.com/MinminzCodes" target="_blank" rel="noopener noreferrer">
